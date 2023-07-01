@@ -227,7 +227,7 @@ function startTimer() {
 */
 function whack(event) {
   // TODO: Write your code here.
-  
+  document.getElementById('moles-audio').play();
   updateScore();
   return points;
   
@@ -276,7 +276,7 @@ function stopGame(){
 *
 */
 function startGame(){
-   
+ document.getElementById('audio').play();
 setDuration(time);
 showUp();
 clearScore();
