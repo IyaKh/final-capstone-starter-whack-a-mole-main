@@ -5,7 +5,7 @@ const startButton = document.querySelector('#start');
 const score = document.querySelector('#score'); // Use querySelector() to get the score element
 const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
 
-let time = 15;
+let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
@@ -140,7 +140,7 @@ function showAndHide(hole, delay){
     // TODO: call the toggleVisibility function so that it removes the 'show' class when the timer times out.
     toggleVisibility(hole);
     gameOver();
-  }, 1000); // TODO: change the setTimeout delay to the one provided as a parameter
+  }, delay); // TODO: change the setTimeout delay to the one provided as a parameter
   return timeoutID;
 }
 
@@ -170,7 +170,7 @@ hole.classList.toggle('show');
 */
 function updateScore() {
   // TODO: Write your code here
-points++;
+points++
 score.textContent = points;
   return points;
 }
@@ -213,7 +213,7 @@ function updateTimer() {
 function startTimer() {
   // TODO: Write your code here
 
-  setInterval(updateTimer, 1000);
+  timer= setInterval(updateTimer, 1000);
   return timer;
 }
 
@@ -254,6 +254,7 @@ moles.forEach(
 */
 function setDuration(duration) {
   time = duration;
+   timerDisplay.textContent=time;
   return time;
 }
 
@@ -277,11 +278,12 @@ function stopGame(){
 */
 function startGame(){
  document.getElementById('audio').play();
-setDuration(time);
+setDuration(15);
 showUp();
 clearScore();
 setEventListeners();
 startTimer();
+
 return "game started";
 }
   
